@@ -7,8 +7,7 @@ export class HttpError extends Error {
 }
 
 export const url =
-  'https:/react-project-udemy-92ee9-default-rtdb.firebaseio.com/ticketOrders.json';
-
+  'https://react-project-udemy-92ee9-default-rtdb.firebaseio.com/ticketOrders.json';
 export const postRequest = async (url, order) => {
   const response = await fetch(url, {
     method: 'POST',
