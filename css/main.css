@@ -737,6 +737,11 @@ a:hover svg {
     padding-top: 40px;
   }
 }
+@media screen and (max-width: 480px) {
+  .header {
+    padding-top: 30px;
+  }
+}
 .header__for-tablet {
   display: none;
 }
@@ -837,6 +842,11 @@ a:hover svg {
 @media screen and (max-width: 768px) {
   .main-section {
     padding-top: 68px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .main-section {
+    padding-top: 55px;
   }
 }
 @media screen and (max-width: 768px) {

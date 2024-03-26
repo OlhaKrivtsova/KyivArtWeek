@@ -9,6 +9,10 @@
     padding-top: 40px;
   }
 
+  @media screen and (max-width: $bp-mobile) {
+    padding-top: 30px;
+  }
+
   &__for-tablet {
     display: none;
   }
