@@ -1,0 +1,447 @@
+.entertainment-section {
+  position: relative;
+  padding-top: 85px;
+
+  @media screen and (max-width: $bp-tablet) {
+    padding-top: 55px;
+  }
+
+  @media screen and (max-width: $bp-mobile) {
+    padding-top: 40px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    font-weight: 300;
+    font-size: 40px;
+
+    @media screen and (max-width: $bp-mobile) {
+      margin-bottom: 25px;
+      font-size: 35px;
+    }
+  }
+
+  &__information {
+    margin-bottom: 60px;
+    max-width: 870px;
+    font-size: 24px;
+    line-height: 1.5;
+
+    @media screen and (max-width: $bp-tablet) {
+      margin-bottom: 50px;
+      font-size: 22px;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      margin-bottom: 35px;
+      font-size: 17px;
+      width: 95%;
+    }
+  }
+  &__animation {
+    position: relative;
+    height: 762px;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../img/background_animation_black.png');
+
+    @media screen and (max-width: $bp-tablet) {
+      height: 407px;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      height: 600px;
+      background-image: url('../img/background_animation_small.png');
+      background-position-y: bottom;
+    }
+
+    &--white {
+      @media screen and (min-width: $bp-tablet) {
+        background-image: url('../img/background_animation_white.png');
+      }
+    }
+  }
+
+  & &__animation-img {
+    animation-delay: 1s;
+
+    @media screen and (max-width: $bp-tablet) {
+      animation-fill-mode: forwards;
+      animation-delay: 0s;
+    }
+
+    &--none {
+      animation: none;
+    }
+  }
+
+  @keyframes imgPath {
+    100% {
+      offset-distance: 100%;
+    }
+  }
+
+  &__animation-game-blue {
+    position: absolute;
+    width: 202px;
+    height: 123px;
+    top: 224px;
+    left: 13%;
+    animation: gameBlue 5s ease-in-out alternate infinite;
+
+    @keyframes gameBlue {
+      100% {
+        top: 472px;
+        left: 52%;
+        transform: rotate(90deg);
+      }
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      width: 107px;
+      height: 65px;
+      top: 10%;
+      left: -30%;
+      animation: gameBlue 2s ease;
+
+      @keyframes gameBlue {
+        100% {
+          top: 120px;
+          left: 8%;
+        }
+      }
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      width: 102px;
+      height: 62px;
+
+      @keyframes gameBlue {
+        100% {
+          top: 181px;
+          left: 20%;
+        }
+      }
+    }
+  }
+
+  &__animation-game-white {
+    width: 182px;
+    height: 185px;
+    position: absolute;
+    top: 472px;
+    left: 52%;
+    animation: gameWhite 5s ease-in-out alternate infinite;
+
+    @keyframes gameWhite {
+      100% {
+        top: 224px;
+        left: 13%;
+        transform: rotate(90deg);
+      }
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      width: 97px;
+      height: 98px;
+      top: 120%;
+      left: 70%;
+      animation: gameWhite 2s ease;
+
+      @keyframes gameWhite {
+        100% {
+          top: 252px;
+          left: 53%;
+        }
+      }
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      width: 107px;
+      height: 109px;
+      top: -30%;
+      left: -30%;
+
+      @keyframes gameWhite {
+        100% {
+          top: 12px;
+          left: 14%;
+        }
+      }
+    }
+  }
+
+  &__animation-joystick {
+    position: absolute;
+    width: 269px;
+    height: 158px;
+    top: 66px;
+    left: 36%;
+    animation: joystick 2s ease alternate infinite;
+
+    @keyframes joystick {
+      100% {
+        transform: rotateX(180deg);
+      }
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      width: 143px;
+      height: 84px;
+      top: -20%;
+      left: 50%;
+
+      animation: joystick 2s ease;
+
+      @keyframes joystick {
+        100% {
+          top: 35px;
+          left: 37%;
+        }
+      }
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      width: 132px;
+      height: 78px;
+
+      @keyframes joystick {
+        100% {
+          left: 50%;
+          top: 66px;
+        }
+      }
+    }
+  }
+
+  &__animation-machine-green {
+    position: absolute;
+    width: 175px;
+    height: 359px;
+    top: 202px;
+    left: 70%;
+    animation: machineGreen 4s ease-in-out alternate infinite;
+
+    @keyframes machineGreen {
+      100% {
+        top: 298px;
+        left: 30%;
+        transform: rotateY(180deg);
+      }
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      width: 93px;
+      height: 191px;
+      top: 0;
+      left: 120%;
+
+      animation: machineGreen 2s ease;
+
+      @keyframes machineGreen {
+        100% {
+          top: 108px;
+          left: 68%;
+        }
+      }
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      display: none;
+    }
+  }
+
+  &__animation-machine-red {
+    position: absolute;
+    width: 161px;
+    height: 348px;
+    top: 298px;
+    left: 30%;
+    animation: machineRed 4s ease-in-out alternate infinite;
+
+    @keyframes machineRed {
+      100% {
+        top: 202px;
+        left: 70%;
+        transform: rotateY(180deg);
+      }
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      width: 85px;
+      height: 185px;
+      top: -50%;
+      left: 10%;
+
+      animation: machineRed 2s ease;
+
+      @keyframes machineRed {
+        100% {
+          top: 160px;
+          left: 30%;
+        }
+      }
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      width: 87px;
+      height: 188px;
+      left: -30%;
+      top: 90%;
+
+      @keyframes machineRed {
+        100% {
+          left: 28%;
+          top: 278px;
+        }
+      }
+    }
+  }
+
+  &__animation-moon {
+    position: absolute;
+    width: 166px;
+    height: 166px;
+    offset-path: path('M111 403C196.5467 194.185 929.575 -156.864 1314 403');
+    offset-rotate: 0deg;
+    animation: imgPath 8s ease-in-out alternate infinite;
+
+    @media screen and (max-width: $bp-tablet) {
+      width: 88px;
+      height: 88px;
+      offset-path: none;
+      top: -30%;
+      left: 100%;
+      animation: moon 2s ease;
+
+      @keyframes moon {
+        100% {
+          top: 37px;
+          left: 82%;
+        }
+      }
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      display: none;
+    }
+  }
+
+  &__animation-rocket-red {
+    position: absolute;
+    width: 218px;
+    height: 134px;
+    top: 80%;
+    offset-path: path('M-600 40 H 1640 Z');
+    offset-rotate: auto;
+    animation: imgPath 6s linear infinite;
+
+    @media screen and (max-width: $bp-tablet) {
+      width: 116px;
+      height: 71px;
+      offset-path: none;
+      top: 313px;
+      left: -30%;
+      animation: racketRed 2s ease;
+
+      @keyframes racketRed {
+        100% {
+          top: 313px;
+          left: 68%;
+        }
+      }
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      width: 124px;
+      height: 76px;
+
+      @keyframes racketRed {
+        100% {
+          left: 58%;
+          top: 228px;
+        }
+      }
+    }
+  }
+
+  &__animation-rocket-white {
+    position: absolute;
+    width: 114px;
+    height: 155px;
+    top: 100%;
+    left: 30%;
+    animation: rocketWhite 4s linear infinite;
+    animation-fill-mode: backwards;
+
+    @keyframes rocketWhite {
+      100% {
+        top: -20%;
+        left: 65%;
+      }
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      width: 60px;
+      height: 82px;
+      top: 130%;
+      left: 10%;
+
+      animation: rocketWhite 2s ease;
+
+      @keyframes rocketWhite {
+        100% {
+          top: 130px;
+          left: 49%;
+        }
+      }
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      width: 94px;
+      height: 127px;
+
+      @keyframes rocketWhite {
+        100% {
+          top: 400px;
+          left: 55%;
+        }
+      }
+    }
+  }
+
+  &__animation-tetris {
+    position: absolute;
+    width: 100px;
+    height: 165px;
+    bottom: 36px;
+    left: 18%;
+    animation: tetris 4s ease alternate infinite;
+
+    @keyframes tetris {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      width: 53px;
+      height: 88px;
+      top: 120%;
+      left: 0%;
+      animation: tetris 2s ease;
+
+      @keyframes tetris {
+        100% {
+          top: 300px;
+          left: 17%;
+        }
+      }
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      display: none;
+    }
+  }
+}

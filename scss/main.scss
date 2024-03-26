@@ -1,0 +1,36 @@
+@import './utils/fonts';
+@import './utils/variables';
+@import './utils/utils';
+
+@import './base/resetStyle';
+@import './base/base';
+@import './base/typography';
+
+@import './components/container';
+@import './components/lines';
+@import './components/links';
+@import './components/mobile-menu';
+@import './components/buttons';
+@import './components/section-title';
+@import './components/tickets';
+@import './components/exposition-item';
+@import './components/overlay';
+@import './components/pop-up';
+@import './components/server-html';
+
+@import './layout/header';
+@import './layout/main-section';
+@import './layout/about-section';
+@import './layout/ticket-section';
+@import './layout/exposition-section';
+@import './layout/lineup-section';
+@import './layout/lecture-section';
+@import './layout/entertainment-section';
+@import './layout/also-section';
+@import './layout/map-section';
+@import './layout/faq-section';
+@import './layout/footer';
+@import './layout/buy-tickets-window';
+@import './layout/payment-window';
+@import './layout/message-window';
+@import './layout/success-window';

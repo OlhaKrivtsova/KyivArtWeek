@@ -1,0 +1,92 @@
+.about-section {
+  padding-top: 115px;
+
+  &__title {
+    line-height: 1;
+    font-size: 40px;
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+
+  &__inform {
+    max-width: 747px;
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+
+    &:last-of-type {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__img-container {
+    display: flex;
+  }
+
+  &__img:nth-child(odd) {
+    width: 37%;
+  }
+
+  &__img:nth-child(even) {
+    width: 26%;
+  }
+
+  @media screen and (max-width: $bp-desktop) {
+    padding-top: 90px;
+
+    &__inform {
+      font-size: 22px;
+    }
+
+    &__img:nth-child(odd) {
+      width: 50%;
+    }
+
+    &__img:nth-child(even) {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: $bp-tablet) {
+    &__img {
+      display: none;
+    }
+
+    &__img:nth-child(1) {
+      display: block;
+      max-height: 450px;
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: $bp-mobile) {
+    padding-top: 85px;
+
+    &__img:nth-child(odd) {
+      display: none;
+    }
+
+    &__img:nth-child(even) {
+      flex-basis: 100%;
+      display: block;
+    }
+
+    &__img-container {
+      margin-left: -24px;
+      margin-right: -24px;
+    }
+
+    &__title {
+      font-size: 35px;
+    }
+
+    &__inform {
+      font-size: 17px;
+      margin-bottom: 30px;
+
+      &:last-of-type {
+        margin-bottom: 55px;
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+.faq-section {
+  position: relative;
+  padding-bottom: 100px;
+
+  &--white {
+    --main-gray-color: var(--secondary-gray-color);
+  }
+
+  @media screen and (max-width: $bp-tablet) {
+    padding-bottom: 55px;
+  }
+
+  @media screen and (max-width: $bp-mobile) {
+    padding-bottom: 50px;
+  }
+
+  &__container {
+    @media screen and (max-width: $bp-mobile) {
+      padding: 0 8px;
+    }
+  }
+
+  &__list {
+    margin: 0 auto;
+    max-width: 885px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    @media screen and (max-width: $bp-tablet) {
+      gap: 20px;
+    }
+  }
+
+  &__question {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    padding-left: 30px;
+    height: 57px;
+    border: 1px solid var(--common-gray-color);
+    font-size: 24px;
+
+    @media screen and (max-width: $bp-tablet) {
+      height: 56px;
+      font-size: 22px;
+      padding-left: 20px;
+      padding-right: 35px;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      height: 41px;
+      padding-left: 10px;
+      padding-right: 20px;
+      font-size: 16px;
+    }
+
+    &:after,
+    &:before {
+      position: absolute;
+      right: 18px;
+      content: '';
+      border: 1px solid currentColor;
+      width: 21px;
+
+      @media screen and (max-width: $bp-tablet) {
+        right: 10px;
+        width: 15px;
+      }
+
+      @media screen and (max-width: $bp-mobile) {
+        right: 5px;
+        width: 15px;
+      }
+    }
+
+    &:before {
+      transform: rotate(-90deg);
+      transition: transform 0.2s;
+    }
+
+    &--active {
+      background-color: var(--main-gray-color);
+      color: var(--common-white-color);
+      &:before {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  &__answer {
+    max-height: 0;
+    margin-top: 10px;
+    padding-left: 30px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.5;
+    transition: max-height 0.5s;
+    overflow: hidden;
+
+    @media screen and (max-width: $bp-mobile) {
+      margin-top: 5px;
+      padding-left: 16px;
+      font-size: 14px;
+      line-height: 1.3;
+    }
+  }
+
+  &__line {
+    @extend .line;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}

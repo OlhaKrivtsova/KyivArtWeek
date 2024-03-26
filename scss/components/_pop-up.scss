@@ -1,0 +1,94 @@
+.pop-up {
+  &--is-visible {
+    .pop-up__overlay {
+      display: block;
+    }
+
+    .pop-up__window {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__window {
+    width: 695px;
+    height: 560px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s, visibility 0.3s;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: var(--bg-color-main);
+    border-radius: 8px;
+    box-shadow: var(--grey-color-for-pop-up) 0px 1px 2px 0px,
+      var(--grey-color-for-pop-up) 0px 2px 6px 2px;
+
+    z-index: 20;
+
+    @media screen and (max-width: $bp-tablet) {
+      width: 440px;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      width: 320px;
+      height: 580px;
+    }
+
+    &--moon {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 24px;
+        height: 247px;
+        width: 487px;
+        background-image: url('../img/half_moon.png');
+        z-index: -1;
+
+        @media screen and (max-width: $bp-tablet) {
+          width: 400px;
+          height: 200px;
+          right: 0;
+          background-size: cover;
+        }
+
+        @media screen and (max-width: $bp-mobile) {
+          width: 300px;
+          height: 160px;
+        }
+      }
+    }
+  }
+
+  &__container {
+    margin: 0 auto;
+    padding: 0 24px;
+    max-width: 477px;
+
+    @media screen and (max-width: $bp-mobile) {
+      padding: 0 20px;
+    }
+  }
+
+  &__frame {
+    border: 1px solid var(--frame-color-for-pop-up);
+    border-radius: 15px;
+  }
+
+  &__icon-close {
+    width: 19px;
+    height: 19px;
+    fill: var(--grey-color-for-pop-up);
+  }
+
+  &__btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 25px;
+    margin-top: 25px;
+  }
+}

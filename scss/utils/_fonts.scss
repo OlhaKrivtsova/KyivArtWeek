@@ -1,0 +1,23 @@
+@font-face {
+  font-family: myHelvetica;
+  src: url('../fonts/HelveticaNeueCyr_Roman.woff2') format('woff2'),
+    url('../fonts/HelveticaNeueCyr_Roman.woff') format('woff'),
+    url('../fonts/HelveticaNeueCyr_Roman.ttf') format('ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: myHelvetica;
+  src: url('../fonts/HelveticaNeueCyr_Light.woff2') format('woff2'),
+    url('../fonts/HelveticaNeueCyr_Light.woff') format('woff'),
+    url('../fonts/HelveticaNeueCyr_Light.ttf') format('ttf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: myHelvetica;
+  src: url('../fonts/HelveticaNeueCyr_Bold.woff2') format('woff2'),
+    url('../fonts/HelveticaNeueCyr_Bold.woff') format('woff'),
+    url('../fonts/HelveticaNeueCyr_Bold.ttf') format('ttf');
+  font-weight: 700;
+}

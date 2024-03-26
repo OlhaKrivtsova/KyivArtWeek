@@ -1,0 +1,109 @@
+.header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  font-size: 18px;
+  z-index: 10;
+
+  @media screen and (max-width: $bp-desktop) {
+    padding-top: 40px;
+  }
+
+  &__for-tablet {
+    display: none;
+  }
+
+  &__for-mobile {
+    display: none;
+  }
+
+  &__horizontal-lines {
+    height: 54px;
+
+    @media screen and (max-width: $bp-desktop) {
+      height: 58px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__row-address {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__theme-and-socials {
+    display: flex;
+    gap: 43px;
+    align-items: center;
+  }
+
+  &__nav {
+    height: 91px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    letter-spacing: 0.04em;
+
+    @media screen and (max-width: $bp-desktop) {
+      height: 100%;
+      justify-content: space-between;
+      gap: 30px;
+      font-size: 18px;
+      letter-spacing: 0.72px;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 13px;
+    justify-content: center;
+
+    @media screen and (max-width: $bp-desktop) {
+      gap: 27px;
+      justify-content: space-between;
+    }
+  }
+
+  &__address {
+    font-size: 20px;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    vertical-align: top;
+  }
+
+  @media screen and (max-width: $bp-desktop) {
+    &__for-desktop {
+      display: none;
+    }
+
+    &__for-tablet {
+      display: block;
+    }
+
+    &__for-mobile {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: $bp-tablet) {
+    &__for-tablet {
+      display: none;
+    }
+
+    &__for-mobile {
+      display: block;
+    }
+  }
+}

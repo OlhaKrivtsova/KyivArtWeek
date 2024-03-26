@@ -1,0 +1,31 @@
+.vertical-lines {
+  border-left: 1px solid var(--text-color-main);
+  border-right: 1px solid var(--text-color-main);
+  background-color: var(--bg-color-main);
+}
+
+.horizontal-lines {
+  border-top: 1px solid var(--text-color-main);
+  border-bottom: 1px solid var(--text-color-main);
+  background-color: var(--bg-color-main);
+}
+
+.line {
+  margin: 0 auto;
+  height: 1px;
+  background-color: var(--gray-line-color);
+}
+
+.boundary-line {
+  @extend .line;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  z-index: 5;
+
+  @media screen and (max-width: $bp-desktop) {
+    display: none;
+  }
+}

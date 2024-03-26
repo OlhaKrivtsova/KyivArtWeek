@@ -1,0 +1,9 @@
+import './mobileMenuHandler.js';
+import './btnSwitchThemeHandler.js';
+import './sliderHandler.js';
+import './switchScheduleHandler.js';
+import './imageAnimated.js';
+import './questionHandler.js';
+import './popUpHandler.js';
+import './buyTicketWindowHandler.js';
+import './navigation.js';

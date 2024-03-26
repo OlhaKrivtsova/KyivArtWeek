@@ -1,0 +1,172 @@
+.main-section {
+  height: 100vh;
+  padding-top: 145px;
+  position: relative;
+
+  @media screen and (max-width: $bp-desktop) {
+    padding-top: 98px;
+  }
+
+  @media screen and (max-width: $bp-tablet) {
+    padding-top: 68px;
+  }
+
+  &__container-for-mobile {
+    @media screen and (max-width: $bp-tablet) {
+      padding: 0;
+    }
+  }
+
+  &__container {
+    height: 100%;
+    background-image: url('../img/photo_main.png');
+    background-repeat: no-repeat;
+    background-size: auto 90%; //590px;
+    background-position: 570px 10px;
+
+    @media screen and (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('../img/photo_main@2x.png');
+    }
+
+    @media screen and (max-width: $bp-desktop) {
+      background-image: url('../img/astronaut.png');
+      background-repeat: no-repeat;
+      background-size: auto 65%; //580px;
+      background-position: 55% 75%;
+
+      @media screen and (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+        background-image: url('../img/astronaut@2x.png');
+      }
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      background-size: auto 60%;
+      background-position: center 80%;
+    }
+  }
+
+  &__left-column {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-left: 86px;
+    width: 443px;
+    padding-top: 30px;
+    padding-bottom: 145px;
+    text-align: center;
+
+    @media screen and (max-width: $bp-desktop) {
+      padding-top: 55px;
+      padding-bottom: 200px;
+      width: 100%;
+      margin-left: 0;
+    }
+    @media screen and (max-width: $bp-tablet) {
+      padding-top: 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 95px;
+    font-size: 76px;
+    line-height: 1.1;
+
+    @media screen and (max-width: $bp-desktop) {
+      max-width: 467px;
+      font-size: 60px;
+      margin-bottom: 35px;
+    }
+    @media screen and (max-width: $bp-tablet) {
+      max-width: 197px;
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__event-date {
+    font-size: 35px;
+
+    @media screen and (max-width: $bp-tablet) {
+      font-size: 30px;
+    }
+  }
+
+  &__line-down {
+    position: absolute;
+    bottom: 1px;
+    height: 54px;
+    width: calc(100% + 50px);
+    display: flex;
+    gap: 45px;
+    align-items: center;
+    font-size: 20px;
+    transform: translateX(-50px);
+    overflow: hidden;
+
+    @media screen and (max-width: $bp-desktop) {
+      display: none;
+    }
+  }
+
+  &__address-lines {
+    width: 100%;
+    position: absolute;
+    bottom: 1px;
+    height: 58px;
+    display: none;
+
+    @media screen and (max-width: $bp-desktop) {
+      display: block;
+    }
+  }
+
+  &__row-address {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+
+    @media screen and (max-width: $bp-mobile) {
+      font-size: 16px;
+    }
+  }
+
+  &__side-line {
+    width: 54px;
+    position: absolute;
+    top: -145px;
+    bottom: 2px;
+    right: 24px;
+    background-color: var(--bg-color-main);
+    font-size: 20px;
+    z-index: 1;
+    white-space: nowrap;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    @media screen and (max-width: $bp-desktop) {
+      display: none;
+    }
+  }
+
+  .side-text {
+    display: inline-block;
+    transform: translateX(-42%) rotate(90deg);
+  }
+}

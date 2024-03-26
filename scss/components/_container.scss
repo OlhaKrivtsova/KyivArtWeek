@@ -1,0 +1,11 @@
+.container {
+  position: relative;
+  height: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  @media screen and (max-width: $bp-tablet) and (min-width: $bp-mobile) {
+    padding: 0 35px;
+  }
+}

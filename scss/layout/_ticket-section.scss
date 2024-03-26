@@ -1,0 +1,66 @@
+.ticket-section {
+  position: relative;
+  padding-top: 130px;
+  padding-bottom: 100px;
+  text-align: center;
+
+  @media screen and (max-width: $bp-desktop) {
+    padding-top: 90px;
+  }
+
+  @media screen and (max-width: $bp-tablet) {
+    padding-top: 75px;
+  }
+
+  &__ticket-container {
+    margin: 0 auto;
+    margin-bottom: 40px;
+
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 29px;
+    justify-content: center;
+
+    @media screen and (max-width: $bp-desktop) {
+      margin-bottom: 50px;
+      row-gap: 23px;
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      row-gap: 36px;
+    }
+  }
+
+  &__information {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    max-width: 1120px;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.25;
+
+    @media screen and (max-width: $bp-desktop) {
+      padding: 0 90px;
+      font-size: 20px;
+      margin-bottom: 60px;
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      padding: 0 5px;
+      font-size: 16px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__download-program {
+    font-size: 20px;
+
+    @media screen and (max-width: $bp-tablet) {
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      font-size: 14px;
+    }
+  }
+}

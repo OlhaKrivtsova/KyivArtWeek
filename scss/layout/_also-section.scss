@@ -1,0 +1,93 @@
+.also-section {
+  padding-top: 130px;
+  padding-bottom: 85px;
+  text-align: center;
+
+  background: var(--common-bg-color);
+  color: var(--common-text-color);
+
+  &__container {
+    @media screen and (max-width: $bp-desktop) {
+      padding: 0;
+    }
+  }
+
+  @media screen and (max-width: $bp-desktop) {
+    padding-top: 70px;
+    padding-bottom: 45px;
+  }
+
+  @media screen and (max-width: $bp-mobile) {
+    padding-bottom: 25px;
+  }
+
+  &__title {
+    font-weight: 300;
+    font-size: 40px;
+    margin-bottom: 90px;
+
+    @media screen and (max-width: $bp-desktop) {
+      margin-bottom: 50px;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      font-size: 35px;
+    }
+  }
+
+  &__item-list {
+    display: flex;
+    gap: 50px;
+    font-size: 24px;
+    overflow-x: scroll;
+    @media screen and (max-width: $bp-desktop) {
+      gap: 25px;
+      font-size: 20px;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      font-size: 17px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    @media screen and (max-width: $bp-desktop) {
+      gap: 25px;
+    }
+  }
+  &__img-container {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img-pizza {
+    width: 162px;
+    height: 199px;
+  }
+
+  &__img-bike {
+    width: 278px;
+    height: 180px;
+  }
+  &__img-van {
+    width: 376px;
+    height: 161px;
+  }
+  &__img-bowl {
+    width: 176px;
+    height: 126px;
+  }
+
+  &__inform {
+    width: 220px;
+    height: 100px;
+  }
+}

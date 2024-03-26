@@ -1,0 +1,40 @@
+.success {
+  &__window {
+    padding-top: 110px;
+    padding-bottom: 255px;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+
+  &__container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--main-gray-color);
+  }
+
+  &__inform {
+    margin-bottom: 15px;
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  &__feedback {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  & &__feedback-link {
+    font-weight: 400;
+    text-decoration: underline solid 1px;
+    text-underline-position: under;
+  }
+}

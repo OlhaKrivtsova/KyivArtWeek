@@ -1,0 +1,30 @@
+.section-title {
+  width: calc(100% + 50px);
+  margin-bottom: 60px;
+  display: flex;
+  gap: 35px;
+  align-items: center;
+  font-size: 40px;
+  transform: translateX(-50px);
+  overflow: hidden;
+  white-space: nowrap;
+
+  &__text:nth-child(even) {
+    font-weight: 700;
+  }
+
+  &--black {
+    .section-title__text:nth-child(even) {
+      color: var(--main-gray-color);
+    }
+  }
+
+  @media screen and (max-width: $bp-desktop) {
+    margin-bottom: 50px;
+  }
+
+  @media screen and (max-width: $bp-tablet) {
+    gap: 15px;
+    font-size: 30px;
+  }
+}

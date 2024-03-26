@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Art Week</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./img/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./img/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./img/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./img/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script type="module" src="./js/main.js"></script>
+  </head>
+  <body>
+    <!-- /////////////////////////////////////////////////////////////    WINDOW FOR ORDERING TICKETS-->
+    <div class="buy-tickets pop-up">
+      <div class="buy-tickets__overlay pop-up__overlay overlay"></div>
+      <div class="buy-tickets__window pop-up__window pop-up__window--moon">
+        <button type="button" class="pop-up__btn-close">
+          <svg class="pop-up__icon-close">
+            <use href="./img/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <div class="pop-up__container">
+          <h2 class="buy-tickets__title">Оформити квиток</h2>
+          <form class="buy-tickets__form">
+            <div class="buy-tickets__ticket-order">
+              <div class="buy-tickets__ticket">
+                <label class="buy-tickets__ticket-label" for="ticket"
+                  >Квиток</label
+                >
+                <input
+                  class="buy-tickets__ticket-date"
+                  type="text"
+                  readonly
+                  id="ticket"
+                  value="26/08/2023"
+                />
+              </div>
+              <div class="buy-tickets__count-costs">
+                <div class="buy-tickets__amount">
+                  <button
+                    disabled
+                    type="button"
+                    class="buy-tickets__btn buy-tickets__btn--decrease"
+                  ></button>
+                  <div class="buy-ticket__amount-inputs">
+                    <label class="visually-hidden" for="amount"
+                      >кількість</label
+                    >
+                    <input
+                      class="buy-tickets__ticket-quantity"
+                      readonly
+                      type="text"
+                      id="amount"
+                      value="1"
+                    />x<label class="visually-hidden" for="price">ціна</label
+                    ><input
+                      class="buy-tickets__ticket-price"
+                      readonly
+                      type="text"
+                      id="price"
+                      value="450.00"
+                    />
+                    UAN
+                  </div>
+                  <button
+                    type="button"
+                    class="buy-tickets__btn buy-tickets__btn--increase"
+                  ></button>
+                </div>
+                <div class="buy-tickets__cost">
+                  <label class="visually-hidden" for="cost">вартість</label>
+                  <input
+                    class="buy-tickets__ticket-cost"
+                    readonly
+                    type="text"
+                    id="cost"
+                    value="450.00"
+                  />UAN
+                </div>
+              </div>
+            </div>
+            <div class="buy-tickets__authority-section">
+              <div class="buy-tickets__input-group">
+                <label for="user-name" class="buy-tickets__authority-label"
+                  >Введіть Ваше ім’я</label
+                >
+                <input
+                  required
+                  type="text"
+                  id="user-name"
+                  class="buy-tickets__authority-input pop-up__frame"
+                />
+              </div>
+              <div class="buy-tickets__input-group">
+                <label for="user-email" class="buy-tickets__authority-label"
+                  >Введіть Ваш E-mail</label
+                >
+                <input
+                  required
+                  type="email"
+                  id="user-email"
+                  class="buy-tickets__authority-input pop-up__frame"
+                />
+              </div>
+            </div>
+            <button class="btn-buy-ticket buy-tickets__btn-buy" type="submit">
+              Купити квиток
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- /////////////////////////////////////////////////////////////////      WINDOW FOR PAYMENT-->
+    <div class="payment pop-up">
+      <div class="payment__overlay pop-up__overlay overlay"></div>
+      <div class="payment__window pop-up__window">
+        <button type="button" class="pop-up__btn-close">
+          <svg class="pop-up__icon-close">
+            <use href="./img/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <div class="pop-up__container payment__container">
+          <div class="payment__html-container pop-up__frame">
+            <!-- <button type="submit" class="payment__btn">Сплатити</button> -->
+          </div>
+          <button class="btn-buy-ticket payment__btn-return">
+            Повернутися до замовлення
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- /////////////////////////////////////////////////////////////////      MESSAGE WINDOW-->
+    <div class="message pop-up">
+      <div class="message__overlay pop-up__overlay overlay"></div>
+      <div class="message__window pop-up__window">
+        <button type="button" class="pop-up__btn-close">
+          <svg class="pop-up__icon-close">
+            <use href="./img/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <div class="pop-up__container message__container">
+          <p class="message__inform">some message</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- /////////////////////////////////////////////////////////////////       SUCCESS WINDOW -->
+    <div class="success pop-up">
+      <div class="success__overlay pop-up__overlay overlay"></div>
+      <div class="success__window pop-up__window pop-up__window--moon">
+        <button type="button" class="pop-up__btn-close">
+          <svg class="pop-up__icon-close">
+            <use href="./img/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <div class="pop-up__container success__container">
+          <h2 class="success__title">Вітаємо!</h2>
+          <p class="success__inform">
+            Ваша оплата пройшла успішно.<br />Незабаром квиток прийде Вам на
+            пошту.
+          </p>
+          <p class="success__feedback">
+            У разі, якщо квиток не прийшов Вам на пошту, напишіть у нашу службу
+            підтримки
+            <a href="mailto:kyivartweek@kawf.ua" class="success__feedback-link"
+              >kyivartweek@kawf.ua</a
+            >.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- /////////////////////////////////////////////////////////////////       HEADER-->
+    <header class="header">
+      <!-- ///////////////////////////////////////////////////////////////       HEADER FOR MOBILE-->
+      <div class="header__for-mobile">
+        <div class="container">
+          <button type="button" class="btn-menu">
+            <svg class="btn-menu__icon">
+              <use href="./img/icons.svg#icon-menu"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="mobile-menu">
+          <div class="overlay mobile-menu__overlay"></div>
+          <div class="mobile-menu__window">
+            <button type="button" class="mobile-menu__btn-close">
+              <svg class="mobile-menu__icon-close">
+                <use href="./img/icons.svg#icon-close"></use>
+              </svg>
+            </button>
+            <h1 lang="en" class="mobile-menu__title upper-case">
+              kyiv art week festival
+            </h1>
+            <h2 class="mobile-menu__event-date">26-28/08</h2>
+            <nav>
+              <ul class="mobile-menu__nav nav">
+                <li><a href="#tickets" class="link">Квитки</a></li>
+                <li><a href="#lineup" class="link">Програма</a></li>
+                <li><a href="#address" class="link">Як дістатися?</a></li>
+              </ul>
+            </nav>
+            <button
+              type="button"
+              class="btn-switch-theme btn-switch-theme--black"
+            >
+              <span class="btn-switch-theme__theme-black">темна тема</span>
+              <span class="btn-switch-theme__theme-white">світла тема</span>
+            </button>
+            <ul class="mobile-menu__socials">
+              <li class="mobile-menu__social">
+                <a
+                  class="mobile-menu__link link"
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                >
+                  <svg class="mobile-menu__icon">
+                    <use href="./img/icons.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="mobile-menu__social">
+                <a
+                  class="mobile-menu__link link"
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                >
+                  <svg class="mobile-menu__icon">
+                    <use href="./img/icons.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="mobile-menu__social">
+                <a
+                  class="mobile-menu__link link"
+                  href="https://twitter.com/"
+                  target="_blank"
+                >
+                  <svg class="mobile-menu__icon">
+                    <use href="./img/icons.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- ///////////////////////////////////////////////////////////////       HEADER FOR TABLET-->
+      <div class="header__for-tablet">
+        <div class="header__horizontal-lines horizontal-lines">
+          <div class="container">
+            <div class="header__row">
+              <ul class="header__socials">
+                <li class="header__social">
+                  <a
+                    class="header__link link"
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                  >
+                    <svg class="header__icon">
+                      <use href="./img/icons.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="header__social">
+                  <a
+                    class="header__link link"
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                  >
+                    <svg class="header__icon">
+                      <use href="./img/icons.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="header__social">
+                  <a
+                    class="header__link link"
+                    href="https://twitter.com/"
+                    target="_blank"
+                  >
+                    <svg class="header__icon">
+                      <use href="./img/icons.svg#icon-twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+              <nav>
+                <ul class="header__nav nav">
+                  <li><a href="#tickets" class="link">Квитки</a></li>
+                  <li><a href="#lineup" class="link">Програма</a></li>
+                  <li><a href="#address" class="link">Як дістатися?</a></li>
+                </ul>
+              </nav>
+
+              <button
+                type="button"
+                class="btn-switch-theme btn-switch-theme--black"
+              >
+                <span class="btn-switch-theme__theme-black">темна тема</span>
+                <span class="btn-switch-theme__theme-white">світла тема</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //////////////////////////////////////////////////////////////////  THE HEADER FOR DESKTOP-->
+      <div class="header__for-desktop">
+        <nav>
+          <ul class="header__nav nav">
+            <li><a href="#tickets" class="link">Квитки</a></li>
+            <li><a href="#lineup" class="link">Програма</a></li>
+            <li><a href="#address" class="link">Як дістатися?</a></li>
+          </ul>
+        </nav>
+
+        <div class="header__horizontal-lines horizontal-lines">
+          <div class="container">
+            <div class="header__row-address">
+              <address class="header__address">
+                Київ, Простір М82, вул. Межигірська 82, м.Тараса Шевченка,
+                11:00-22:00
+              </address>
+              <div class="header__theme-and-socials">
+                <button
+                  type="button"
+                  class="btn-switch-theme btn-switch-theme--black"
+                >
+                  <span class="btn-switch-theme__theme-black">темна тема</span>
+                  <span class="btn-switch-theme__theme-white">світла тема</span>
+                </button>
+                <ul class="header__socials">
+                  <li class="header__social">
+                    <a
+                      class="header__link link"
+                      href="https://www.facebook.com/"
+                      target="_blank"
+                    >
+                      <svg class="header__icon">
+                        <use href="./img/icons.svg#icon-facebook"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="header__social">
+                    <a
+                      class="header__link link"
+                      href="https://www.instagram.com/"
+                      target="_blank"
+                    >
+                      <svg class="header__icon">
+                        <use href="./img/icons.svg#icon-instagram"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="header__social">
+                    <a
+                      class="header__link link"
+                      href="https://twitter.com/"
+                      target="_blank"
+                    >
+                      <svg class="header__icon">
+                        <use href="./img/icons.svg#icon-twitter"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <!-- /////////////////////////////////////////////////////////////////////      MAIN SECTION-->
+      <section class="main-section">
+        <div class="container main-section__container-for-mobile">
+          <div class="main-section__container">
+            <div class="main-section__left-column">
+              <div class="main-section__left-column-top">
+                <h2 lang="en" class="main-section__title upper-case">
+                  kyiv art week festival
+                </h2>
+                <h2 class="main-section__event-date">26-28/08</h2>
+              </div>
+              <button type="button" class="btn-buy-ticket" id="buyTicket">
+                Купити квиток
+              </button>
+            </div>
+          </div>
+          <div class="main-section__side-line vertical-lines">
+            <span class="side-text">Занурся у сучасне мистецтво</span>
+          </div>
+        </div>
+
+        <div class="main-section__line-down horizontal-lines upper-case">
+          <span class="main-section__line-down-text">#kyivartweek</span>
+          <span class="main-section__line-down-text">#kyivartweek</span>
+          <span class="main-section__line-down-text">#kyivartweek</span>
+          <span class="main-section__line-down-text">#kyivartweek</span>
+          <span class="main-section__line-down-text">#kyivartweek</span>
+          <span class="main-section__line-down-text">#kyivartweek</span>
+          <span class="main-section__line-down-text">#kyivartweek</span>
+          <span class="main-section__line-down-text">#kyivartweek</span>
+          <span class="main-section__line-down-text">#kyivartweek</span>
+          <span class="main-section__line-down-text">#kyivartweek</span>
+          <span class="main-section__line-down-text">#kyivartweek</span>
+          <span class="main-section__line-down-text">#kyivartweek</span>
+          <span class="main-section__line-down-text">#kyivartweek</span>
+          <span class="main-section__line-down-text">#kyivartweek</span>
+          <span class="main-section__line-down-text">#kyivartweek</span>
+          <span class="main-section__line-down-text">#kyivartweek</span>
+        </div>
+
+        <div class="main-section__address-lines horizontal-lines">
+          <div class="container">
+            <div class="main-section__row-address">
+              <address class="main-section__address">
+                Київ, Простір М82, вул. Межигірська 82, м.Тараса Шевченка,
+                11:00-22:00
+              </address>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /////////////////////////////////////////////////////////////////////     ABOUT SECTION-->
+      <section class="about-section">
+        <div class="container">
+          <h2 class="about-section__title">Про фестиваль</h2>
+          <p class="about-section__inform">
+            Виставка сучасного технологічного мистецтва. 3 дні. 33 години. 96
+            митців. 500+ арт об'єктів. 17 виконавців. 8 лекцій. Корнер космічної
+            віртуальної реальності.
+          </p>
+          <p class="about-section__inform">
+            Вік входу на фестиваль необмежений. Pet-friendly.
+          </p>
+          <div class="about-section__img-container">
+            <img
+              class="about-section__img"
+              src="./img/about1.png"
+              srcset="./img/about1.png 1x, ./img/about1@2x.png 2x"
+              alt=""
+            />
+
+            <img
+              class="about-section__img"
+              src="./img/about3.png"
+              srcset="./img/about3.png 1x, ./img/about3@2x.png 2x"
+              alt=""
+            />
+
+            <img
+              class="about-section__img"
+              src="./img/about2.png"
+              srcset="./img/about2.png 1x, ./img/about2@2x.png 2x"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <!-- /////////////////////////////////////////////////////////////////////      TICKET SECTION-->
+      <section class="ticket-section" id="tickets">
+        <div class="section-title section-title--black upper-case">
+          <h2 class="section-title__text" lang="en">tickets</h2>
+          <span class="section-title__text">tickets</span>
+          <span class="section-title__text">tickets</span>
+          <span class="section-title__text">tickets</span>
+          <span class="section-title__text">tickets</span>
+          <span class="section-title__text">tickets</span>
+          <span class="section-title__text">tickets</span>
+          <span class="section-title__text">tickets</span>
+          <span class="section-title__text">tickets</span>
+          <span class="section-title__text">tickets</span>
+          <span class="section-title__text">tickets</span>
+        </div>
+        <div class="container">
+          <ul class="ticket-section__ticket-container">
+            <li>
+              <article class="ticket">
+                <h3 class="ticket__title">Квиток 26/08</h3>
+                <p class="ticket__information">
+                  Квиток дозволяє перебувати на території фестивалю протягом
+                  зазначеної дати
+                </p>
+                <p class="ticket__price upper-case">450 uah</p>
+                <button
+                  type="button"
+                  class="btn-buy-ticket"
+                  data-date="26/08/23"
+                  data-price="450.00"
+                >
+                  Купити квиток
+                </button>
+              </article>
+            </li>
+            <li>
+              <article class="ticket">
+                <h3 class="ticket__title">Квиток 27/08</h3>
+                <p class="ticket__information">
+                  Квиток дозволяє перебувати на території фестивалю протягом
+                  зазначеної дати
+                </p>
+                <p class="ticket__price upper-case">350 uah</p>
+                <button
+                  type="button"
+                  class="btn-buy-ticket"
+                  data-date="27/08/23"
+                  data-price="350.00"
+                >
+                  Купити квиток
+                </button>
+              </article>
+            </li>
+            <li>
+              <article class="ticket">
+                <h3 class="ticket__title">Квиток 28/08</h3>
+                <p class="ticket__information">
+                  Квиток дозволяє перебувати на території фестивалю протягом
+                  зазначеної дати
+                </p>
+                <p class="ticket__price upper-case">450 uah</p>
+                <button
+                  type="button"
+                  class="btn-buy-ticket"
+                  data-date="28/08/23"
+                  data-price="450.00"
+                >
+                  Купити квиток
+                </button>
+              </article>
+            </li>
+            <li>
+              <article class="ticket ticket__full ticket__full--black">
+                <h3 class="ticket__title">
+                  Квиток <span class="ticket__title-full">FULL</span>
+                  <br /><span class="ticket__date">26-28/08</span>
+                </h3>
+                <p class="ticket__information">
+                  Квиток дозволяє перебувати на території фестивалю протягом
+                  <br />3-х днів
+                </p>
+                <p class="ticket__price upper-case">
+                  <span class="ticket__price-full">850 uah</span>
+                  <span class="ticket__price-before">1250 uah</span>
+                </p>
+                <button
+                  type="button"
+                  class="btn-buy-ticket ticket__btn-buy-ticket"
+                  data-date="26-28/08/23"
+                  data-price="850.00"
+                >
+                  Купити квиток
+                </button>
+              </article>
+            </li>
+          </ul>
+          <p class="ticket-section__information">
+            *Продаж квитків online здійснюється до 25.08. В день заходу квитки
+            можна придбати на місці. Вартість квитків: на 26.08 та 28.08 - 550
+            грн; 27.08 - 450 грн; квиток на всі дні - 990 грн.
+          </p>
+          <p class="ticket-section__download-program">
+            <a
+              href="./assets/program.pdf"
+              target="_blank"
+              download
+              class="link-with-arrow"
+              >Завантажити програму фестивалю
+              <svg class="link-with-arrow__arrow">
+                <use href="./img/icons.svg#icon-arrow"></use>
+              </svg>
+            </a>
+          </p>
+        </div>
+        <div class="boundary-line"></div>
+      </section>
+      <!-- /////////////////////////////////////////////////////////////////////      EXPOSITION SECTION-->
+      <section class="exposition-section">
+        <div class="container">
+          <h2 class="exposition-section__title">Експозиція</h2>
+          <p class="exposition-section__information">
+            На виставці представлені роботи 96 сучасних митців у сфері живопису,
+            графіті, фотографії, художньої графіки, кіно та скульптури.
+            Експозиція нараховує більше 500 арт об'єктів.
+          </p>
+          <p class="exposition-section__watch-list">
+            <a
+              href="./assets/item-list.pdf"
+              target="_blank"
+              class="link-with-arrow"
+              >Дивитися список робіт та митців
+              <svg class="link-with-arrow__arrow">
+                <use href="./img/icons.svg#icon-arrow"></use>
+              </svg>
+            </a>
+          </p>
+        </div>
+        <div class="exposition-section__slider">
+          <button
+            type="button"
+            disabled
+            class="btn-slider exposition-section__btn exposition-section__btn--left"
+          >
+            <svg class="btn-slider__arrow">
+              <use href="./img/icons.svg#icon-arrow"></use>
+            </svg>
+          </button>
+          <div class="exposition-section__item-container">
+            <ul class="exposition-section__items">
+              <li>
+                <article class="item item--first">
+                  <img
+                    class="item__img"
+                    src="./img/item1.png"
+                    alt=""
+                    srcset="./img/item1.png 1x, ./img/item1@2x.png 2x"
+                  />
+                  <h3 class="item__name">Спадковість</h3>
+                  <p class="item__type">Фотографія</p>
+                  <p class="item__author">Василь Лус, 2020</p>
+                </article>
+              </li>
+              <li>
+                <article class="item">
+                  <img
+                    class="item__img"
+                    src="./img/item2.png"
+                    alt=""
+                    srcset="./img/item2.png 1x, ./img/item2@2x.png 2x"
+                  />
+                  <h3 class="item__name">Інспірейшн</h3>
+                  <p class="item__type">3D дизайн</p>
+                  <p class="item__author">Кирил Гриценко, 2021</p>
+                </article>
+              </li>
+              <li>
+                <article class="item">
+                  <img
+                    class="item__img"
+                    src="./img/item3.png"
+                    alt=""
+                    srcset="./img/item3.png 1x, ./img/item3@2x.png 2x"
+                  />
+                  <h3 class="item__name">Воля</h3>
+                  <p class="item__type">Фотографія</p>
+                  <p class="item__author">Денис Григоренко, 2022</p>
+                </article>
+              </li>
+              <li>
+                <article class="item">
+                  <img
+                    class="item__img"
+                    src="./img/item4.png"
+                    alt=""
+                    srcset="./img/item4.png 1x, ./img/item4@2x.png 2x"
+                  />
+                  <h3 class="item__name">Почуття зараз</h3>
+                  <p class="item__type">Скульптура</p>
+                  <p class="item__author">Микита Єль, 2022</p>
+                </article>
+              </li>
+              <li>
+                <article class="item">
+                  <img
+                    class="item__img"
+                    src="./img/item1.png"
+                    alt=""
+                    srcset="./img/item1.png 1x, ./img/item1@2x.png 2x"
+                  />
+                  <h3 class="item__name">Спадковість</h3>
+                  <p class="item__type">Фотографія</p>
+                  <p class="item__author">Василь Лус, 2020</p>
+                </article>
+              </li>
+              <li>
+                <article class="item">
+                  <img
+                    class="item__img"
+                    src="./img/item2.png"
+                    alt=""
+                    srcset="./img/item2.png 1x, ./img/item2@2x.png 2x"
+                  />
+                  <h3 class="item__name">Інспірейшн</h3>
+                  <p class="item__type">3D дизайн</p>
+                  <p class="item__author">Кирил Гриценко, 2021</p>
+                </article>
+              </li>
+              <li>
+                <article class="item">
+                  <img
+                    class="item__img"
+                    src="./img/item3.png"
+                    alt=""
+                    srcset="./img/item3.png 1x, ./img/item3@2x.png 2x"
+                  />
+                  <h3 class="item__name">Воля</h3>
+                  <p class="item__type">Фотографія</p>
+                  <p class="item__author">Денис Григоренко, 2022</p>
+                </article>
+              </li>
+              <li>
+                <article class="item">
+                  <img
+                    class="item__img"
+                    src="./img/item4.png"
+                    alt=""
+                    srcset="./img/item4.png 1x, ./img/item4@2x.png 2x"
+                  />
+                  <h3 class="item__name">Почуття зараз</h3>
+                  <p class="item__type">Скульптура</p>
+                  <p class="item__author">Микита Єль, 2022</p>
+                </article>
+              </li>
+            </ul>
+          </div>
+          <button
+            type="button"
+            class="btn-slider exposition-section__btn exposition-section__btn--right"
+          >
+            <svg class="btn-slider__arrow">
+              <use href="./img/icons.svg#icon-arrow"></use>
+            </svg>
+          </button>
+        </div>
+      </section>
+      <!-- /////////////////////////////////////////////////////////////////////      LINE-UP SECTION-->
+      <section class="lineup-section" id="lineup">
+        <div class="section-title section-title--black upper-case">
+          <h2 class="section-title__text" lang="en">line-up</h2>
+          <span class="section-title__text">line-up</span>
+          <span class="section-title__text">line-up</span>
+          <span class="section-title__text">line-up</span>
+          <span class="section-title__text">line-up</span>
+          <span class="section-title__text">line-up</span>
+          <span class="section-title__text">line-up</span>
+          <span class="section-title__text">line-up</span>
+          <span class="section-title__text">line-up</span>
+          <span class="section-title__text">line-up</span>
+          <span class="section-title__text">line-up</span>
+        </div>
+        <div class="container">
+          <ul class="lineup-section__list">
+            <li class="lineup-section__list-item">
+              <h3 class="lineup-section__item-title">26/08</h3>
+              <p class="lineup-section__item-text">
+                Cursus | Augue Euismod | Vel morbi | Eget | Dui ultrices | Eget
+                | Dui ultrices | B53 |
+              </p>
+            </li>
+            <li class="lineup-section__list-item">
+              <h3 class="lineup-section__item-title">27/08</h3>
+              <p class="lineup-section__item-text">
+                Cursus | Augue Euismod | Vel morbi | Eget | Dui ultrices | Eget
+                | Dui ultrices | B53 |
+              </p>
+            </li>
+            <li class="lineup-section__list-item">
+              <h3 class="lineup-section__item-title">28/08</h3>
+              <p class="lineup-section__item-text">
+                Cursus | Augue Euismod | Vel morbi | Eget | Dui ultrices | Eget
+                | Dui ultrices | B53 |
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="boundary-line"></div>
+      </section>
+      <!-- /////////////////////////////////////////////////////////////////////      LECTURE SECTION-->
+      <section class="lecture-section">
+        <div class="container">
+          <h2 class="lecture-section__title">Лекторій</h2>
+          <p class="lecture-section__inform">
+            9 лекцій про історію і розвиток сучасного українського мистецтва і
+            літератури від медіа агенції СЛУХ.
+          </p>
+          <div class="lecture-section__container">
+            <div class="lecture-section__img-container">
+              <img
+                src="./img/lecture.png"
+                alt=""
+                class="lecture-section__img"
+                srcset="./img/lecture.png 1x, img/lecture@2x.png 2x"
+              />
+            </div>
+            <div class="lecture-section__schedule">
+              <nav>
+                <ul class="lecture-section__date-list">
+                  <li>
+                    <a
+                      class="lecture-section__date lecture-section__date--active"
+                      href="day1"
+                      >26/08</a
+                    >
+                  </li>
+                  <li>
+                    <a class="lecture-section__date" href="day2">27/08</a>
+                  </li>
+                  <li>
+                    <a class="lecture-section__date" href="day3">28/08</a>
+                  </li>
+                </ul>
+              </nav>
+              <ul class="lecture-section__schedule-list">
+                <li>
+                  <ul
+                    class="lecture-section__daily-schedule lecture-section__daily-schedule--active"
+                    id="day1"
+                  >
+                    <li class="lecture-section__event">
+                      <h3 class="lecture-section__event-time">12:30-14:00</h3>
+                      <div class="lecture-section__event-details">
+                        <p class="lecture-section__event-name">
+                          Розвиток українського поп-арту
+                        </p>
+                        <p class="lecture-section__event-host">
+                          Христина Кучер
+                        </p>
+                      </div>
+                    </li>
+                    <li class="lecture-section__event">
+                      <h3 class="lecture-section__event-time">15:00-16:00</h3>
+                      <div class="lecture-section__event-details">
+                        <p class="lecture-section__event-name">
+                          Сучасний модерн
+                        </p>
+                        <p class="lecture-section__event-host">Денис Гуцал</p>
+                      </div>
+                    </li>
+                    <li class="lecture-section__event">
+                      <h3 class="lecture-section__event-time">16:30-17:30</h3>
+                      <div class="lecture-section__event-details">
+                        <p class="lecture-section__event-name">
+                          Українська література 2022
+                        </p>
+                        <p class="lecture-section__event-host">
+                          Дмитро Христусь
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <ul class="lecture-section__daily-schedule" id="day2">
+                    <li class="lecture-section__event">
+                      <h3 class="lecture-section__event-time">11:30-13:00</h3>
+                      <div class="lecture-section__event-details">
+                        <p class="lecture-section__event-name">
+                          Література як спосіб життя: український модернізм і
+                          його наслідки
+                        </p>
+                        <p class="lecture-section__event-host">Галина Глодзь</p>
+                      </div>
+                    </li>
+                    <li class="lecture-section__event">
+                      <h3 class="lecture-section__event-time">15:00-16:00</h3>
+                      <div class="lecture-section__event-details">
+                        <p class="lecture-section__event-name">
+                          Сучасне мистецтво України. Оглядова лекція.
+                        </p>
+                        <p class="lecture-section__event-host">Наталі Лодзя</p>
+                      </div>
+                    </li>
+                    <li class="lecture-section__event">
+                      <h3 class="lecture-section__event-time">16:30-17:30</h3>
+                      <div class="lecture-section__event-details">
+                        <p class="lecture-section__event-name">
+                          Українська література 20 сторіччя
+                        </p>
+                        <p class="lecture-section__event-host">Лана Стошина</p>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <ul class="lecture-section__daily-schedule" id="day3">
+                    <li class="lecture-section__event">
+                      <h3 class="lecture-section__event-time">12:00-14:20</h3>
+                      <div class="lecture-section__event-details">
+                        <p class="lecture-section__event-name">
+                          Сучасне мистецтво: як його зрозуміти і навіщо
+                        </p>
+                        <p class="lecture-section__event-host">Олена Окунева</p>
+                      </div>
+                    </li>
+                    <li class="lecture-section__event">
+                      <h3 class="lecture-section__event-time">15:00-16:00</h3>
+                      <div class="lecture-section__event-details">
+                        <p class="lecture-section__event-name">
+                          Історія мистецтва в Києві
+                        </p>
+                        <p class="lecture-section__event-host">
+                          Павло Дубицький
+                        </p>
+                      </div>
+                    </li>
+                    <li class="lecture-section__event">
+                      <h3 class="lecture-section__event-time">16:15-17:45</h3>
+                      <div class="lecture-section__event-details">
+                        <p class="lecture-section__event-name">
+                          Мистецтво в кожному з нас
+                        </p>
+                        <p class="lecture-section__event-host">Сергій Самусь</p>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="boundary-line"></div>
+      </section>
+      <!-- /////////////////////////////////////////////////////////////////////    ENTERTAINMENT SECTION-->
+      <section class="entertainment-section">
+        <div class="container">
+          <h2 class="entertainment-section__title">Розваги</h2>
+          <p class="entertainment-section__information">
+            На території фестивалю розміщено павільон з ретро ігровими-
+            автоматами, 8 установок PlayStation та корнер віртуальної космічної
+            реальності.
+          </p>
+        </div>
+        <div class="entertainment-section__animation">
+          <img
+            src="./img/animation/game_blue.png"
+            alt=""
+            class="entertainment-section__animation-img entertainment-section__animation-img--none entertainment-section__animation-game-blue"
+          />
+          <img
+            src="./img/animation/game_white.png"
+            alt=""
+            class="entertainment-section__animation-img entertainment-section__animation-img--none entertainment-section__animation-game-white"
+          />
+          <img
+            src="./img/animation/joystick.png"
+            alt=""
+            class="entertainment-section__animation-img entertainment-section__animation-img--none entertainment-section__animation-joystick"
+          />
+          <img
+            src="./img/animation/machine_green.png"
+            alt=""
+            class="entertainment-section__animation-img entertainment-section__animation-img--none entertainment-section__animation-machine-green"
+          />
+          <img
+            src="./img/animation/machine_red.png"
+            alt=""
+            class="entertainment-section__animation-img entertainment-section__animation-img--none entertainment-section__animation-machine-red"
+          />
+          <img
+            src="./img/animation/moon.png"
+            alt=""
+            class="entertainment-section__animation-img entertainment-section__animation-img--none entertainment-section__animation-moon"
+          />
+          <img
+            src="./img/animation/rocket_red.png"
+            alt=""
+            class="entertainment-section__animation-img entertainment-section__animation-img--none entertainment-section__animation-rocket-red"
+          />
+          <img
+            src="./img/animation/rocket_white.png"
+            alt=""
+            class="entertainment-section__animation-img entertainment-section__animation-img--none entertainment-section__animation-rocket-white"
+          />
+          <img
+            src="./img/animation/tetris.png"
+            alt=""
+            class="entertainment-section__animation-img entertainment-section__animation-img--none entertainment-section__animation-tetris"
+          />
+        </div>
+      </section>
+      <!-- /////////////////////////////////////////////////////////////////////      ALSO SECTION-->
+      <section class="also-section">
+        <div class="container also-section__container">
+          <h2 class="also-section__title">А також</h2>
+          <ul class="also-section__item-list">
+            <li class="also-section__item">
+              <div class="also-section__img-container">
+                <img
+                  src="./img/also/pizza.png"
+                  alt=""
+                  class="also-section__img also-section__img-pizza"
+                />
+              </div>
+              <p class="also-section__inform">
+                12 точок з їжею від топових київськиx закладів
+              </p>
+            </li>
+            <li class="also-section__item">
+              <div class="also-section__img-container">
+                <img
+                  src="./img/also/bike.png"
+                  alt=""
+                  class="also-section__img also-section__img-bike"
+                />
+              </div>
+              <p class="also-section__inform">Велопарковка</p>
+            </li>
+            <li class="also-section__item">
+              <div class="also-section__img-container">
+                <img
+                  src="./img/also/van.png"
+                  alt=""
+                  class="also-section__img also-section__img-van"
+                />
+              </div>
+              <p class="also-section__inform">
+                Закритий паркінг для відвідувачів фестивалю
+              </p>
+            </li>
+            <li class="also-section__item">
+              <div class="also-section__img-container">
+                <img
+                  src="./img/also/bowl.png"
+                  alt=""
+                  class="also-section__img also-section__img-bowl"
+                />
+              </div>
+              <p class="also-section__inform">
+                Питні фонтанчики для ваших пухнастиків
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- /////////////////////////////////////////////////////////////////////      MAP SECTION-->
+      <section class="map-section" id="address">
+        <div class="container map-section__container">
+          <h2 class="map-section__title">Як дістатися?</h2>
+          <div class="map-section__map-container">
+            <iframe
+              class="map-section__map"
+              src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d5136.621835099882!2d30.497057074894258!3d50.47534612597748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z0J_RgNC-0YHRgtGW0YAg0Jw4Miwg0LLRg9C7LiDQnNC10LbQuNCz0ZbRgNGB0YzQutCwIDgyLCDQvC7QotCw0YDQsNGB0LAg0KjQtdCy0YfQtdC90LrQsC4!5e1!3m2!1sen!2sua!4v1708957093570!5m2!1sen!2sua"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <address class="map-section__address">
+            Простір М82, вул. Межигірська 82, м.Тараса Шевченка.
+          </address>
+          <p class="map-section__inform">
+            *На території передбачена парковка. Туди можна потрапити, повернувши
+            праворуч перед Tetra Pak або з вулиці Електриків (поворот праворуч).
+            Паркінг для гостей фестивалю безкоштовний.
+          </p>
+        </div>
+      </section>
+      <!-- /////////////////////////////////////////////////////////////////////        FAQ SECTION-->
+      <section class="faq-section">
+        <div class="section-title section-title--black upper-case">
+          <h2 class="section-title__text" lang="en">line-up</h2>
+          <span class="section-title__text">faq</span>
+          <span class="section-title__text">faq</span>
+          <span class="section-title__text">faq</span>
+          <span class="section-title__text">faq</span>
+          <span class="section-title__text">faq</span>
+          <span class="section-title__text">faq</span>
+          <span class="section-title__text">faq</span>
+          <span class="section-title__text">faq</span>
+          <span class="section-title__text">faq</span>
+          <span class="section-title__text">faq</span>
+          <span class="section-title__text">faq</span>
+          <span class="section-title__text">faq</span>
+          <span class="section-title__text">faq</span>
+          <span class="section-title__text">faq</span>
+          <span class="section-title__text">faq</span>
+        </div>
+        <div class="container faq-section__container">
+          <ul class="faq-section__list">
+            <li class="faq-section__item">
+              <button class="faq-section__question upper-case">
+                Чи можна прийти з дітьми?
+              </button>
+              <div class="faq-section__answer">
+                Так. Ми раді гостям будь-якого віку. На території фестивалю
+                будуть тихі лаундж зони де ви можете відпочити разом із дітьми.
+                Також на фуд корті ви знайдете точки з хелсі їжею яка буде
+                смачною та корисною для діток.
+              </div>
+            </li>
+            <li class="faq-section__item">
+              <button class="faq-section__question upper-case">
+                Якщо буде повітряна тривога?
+              </button>
+              <div class="faq-section__answer">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias
+                illum debitis adipisci, facilis veritatis ut, in autem
+                laboriosam, voluptas perferendis et. Magni in cumque impedit,
+                voluptates dolores ducimus iusto? Explicabo alias suscipit
+                mollitia fugiat, inventore magni eos nulla aliquam amet tempore
+                modi provident magnam necessitatibus.
+              </div>
+            </li>
+            <li class="faq-section__item">
+              <button class="faq-section__question upper-case">
+                Як заходити з квитком full?
+              </button>
+              <div class="faq-section__answer">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                blanditiis odio nihil necessitatibus laudantium totam dolore in
+                aperiam officiis, incidunt earum quod quaerat provident fugiat.
+              </div>
+            </li>
+            <li class="faq-section__item">
+              <button class="faq-section__question upper-case">
+                Чи треба реєструватися на лекції?
+              </button>
+              <div class="faq-section__answer">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Maiores, amet delectus! Ea corporis accusamus explicabo quo,
+                illo accusantium ducimus fugiat odit perferendis recusandae
+                dignissimos impedit ratione iusto quos quasi deleniti.
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="faq-section__line"></div>
+      </section>
+    </main>
+    <!-- ///////////////////////////////////////////////////////////////////////            FOOTER-->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__container">
+          <div class="footer__left">
+            <h2 class="footer__title">Залишилися питання?</h2>
+            <a href="tel:+0935826996" class="footer__tel">(093) 582-69-96</a>
+            <a href="tel:+0505826996" class="footer__tel">(050) 582-69-96</a>
+            <a href="mailto:kyivartweek@kawf.ua" class="footer__feedback-link"
+              >kyivartweek@kawf.ua</a
+            >
+            <a href="https://t.me" target="_blank" class="footer__telegram"
+              >Написати нам в Telegram</a
+            >
+          </div>
+          <div class="footer__right">
+            <ul class="footer__socials">
+              <li class="footer__social">
+                <a
+                  class="footer__link"
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                >
+                  <svg class="footer__icon">
+                    <use href="./img/icons.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__social">
+                <a
+                  class="footer__link"
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                >
+                  <svg class="footer__icon">
+                    <use href="./img/icons.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__social">
+                <a
+                  class="footer__link"
+                  href="https://twitter.com/"
+                  target="_blank"
+                >
+                  <svg class="footer__icon">
+                    <use href="./img/icons.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+            <nav>
+              <ul class="footer__nav nav">
+                <li><a href="#tickets" class="link">Квитки</a></li>
+                <li><a href="#lineup" class="link">Програма</a></li>
+                <li><a href="#address" class="link">Як дістатися?</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

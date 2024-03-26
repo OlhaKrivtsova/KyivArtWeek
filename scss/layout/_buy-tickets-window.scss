@@ -1,0 +1,153 @@
+.buy-tickets {
+  &__window {
+    padding-top: 40px;
+    padding-bottom: 50px;
+
+    @media screen and (max-width: $bp-mobile) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__title {
+    font-size: 30px;
+    letter-spacing: 0.02em;
+    margin-bottom: 35px;
+
+    @media screen and (max-width: $bp-mobile) {
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__ticket {
+    margin-bottom: 25px;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+
+    @media screen and (max-width: $bp-mobile) {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__ticket-label {
+    cursor: inherit;
+  }
+
+  &__ticket-date {
+    width: 150px;
+  }
+
+  &__count-costs {
+    margin-bottom: 35px;
+    position: relative;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: $bp-mobile) {
+      flex-direction: column;
+      gap: 25px;
+    }
+  }
+
+  &__amount {
+    display: flex;
+    gap: 1px;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 200px;
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  &__ticket-quantity {
+    width: 11px;
+  }
+
+  &__ticket-price {
+    width: 65px;
+    text-align: center;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    align-self: flex-end;
+    border: solid currentColor 1px;
+
+    &:after,
+    &:before {
+      position: absolute;
+      content: '';
+      width: 15px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    &--increase {
+      &:after {
+        transform: rotate(90deg);
+      }
+    }
+
+    &:disabled {
+      color: var(--grey-color-for-pop-up);
+    }
+  }
+
+  &__cost {
+    font-size: 24px;
+    letter-spacing: 0.02em;
+
+    @media screen and (max-width: $bp-mobile) {
+      order: -1;
+    }
+  }
+
+  &__ticket-cost {
+    width: 75px;
+  }
+
+  &__authority-section {
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__authority-input {
+    width: 100%;
+    height: 50px;
+    padding-left: 8px;
+    font-size: 20px;
+    background-color: var(--bg-color-main);
+
+    @media screen and (max-width: $bp-mobile) {
+      height: 45px;
+    }
+  }
+
+  &__authority-label {
+    font-size: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  &__btn-buy {
+    display: block;
+    margin: 0 auto;
+  }
+}

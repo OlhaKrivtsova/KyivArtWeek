@@ -1,0 +1,163 @@
+.lecture-section {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 85px;
+  background-color: var(--common-bg-color);
+  color: var(--common-text-color);
+
+  @media screen and (max-width: $bp-desktop) {
+    padding-top: 45px;
+    padding-bottom: 50px;
+  }
+
+  @media screen and (max-width: $bp-mobile) {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1;
+
+    @media screen and (max-width: $bp-mobile) {
+      font-size: 35px;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__inform {
+    max-width: 800px;
+    margin-bottom: 65px;
+    font-size: 24px;
+    line-height: 1.5;
+
+    @media screen and (max-width: $bp-mobile) {
+      font-size: 17px;
+      margin-bottom: 35px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    gap: 60px;
+
+    @media screen and (max-width: $bp-desktop) {
+      gap: 20px;
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    @media screen and (max-width: $bp-tablet) {
+      gap: 35px;
+    }
+  }
+
+  &__img-container {
+    flex-shrink: 2;
+
+    @media screen and (max-width: $bp-tablet) {
+      margin: 0 -35px;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      margin: 0 -24px;
+    }
+  }
+
+  &__img {
+    width: 586px;
+    height: 450px;
+    object-position: -30px center;
+
+    @media screen and (max-width: $bp-tablet) {
+      width: 768px;
+      height: 397px;
+      object-position: center center;
+    }
+
+    @media screen and (max-width: $bp-mobile) {
+      height: 253px;
+    }
+  }
+
+  &__schedule {
+    flex-basis: 560px;
+    flex-shrink: 1;
+
+    @media screen and (max-width: $bp-tablet) {
+      flex-basis: auto;
+    }
+  }
+
+  &__date-list {
+    display: flex;
+    gap: 45px;
+    margin-bottom: 60px;
+    font-size: 30px;
+    line-height: 0.8;
+    color: var(--light-gray-color);
+
+    @media screen and (max-width: $bp-mobile) {
+      font-size: 26px;
+      margin-bottom: 35px;
+      gap: 35px;
+    }
+  }
+
+  & &__date {
+    &:hover {
+      color: var(--common-hover-link-color);
+    }
+
+    &--active {
+      color: var(--common-text-color);
+      text-decoration: underline;
+    }
+  }
+
+  &__daily-schedule {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 22px;
+
+    &--active {
+      display: flex;
+    }
+    @media screen and (max-width: $bp-mobile) {
+      font-size: 17px;
+    }
+  }
+
+  &__event {
+    display: flex;
+    gap: 55px;
+  }
+
+  &__event-time {
+    white-space: nowrap;
+  }
+
+  &__event-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 300;
+  }
+
+  &__event-host {
+    font-size: 18px;
+
+    @media screen and (max-width: $bp-mobile) {
+      font-size: 12px;
+    }
+  }
+  .boundary-line {
+    bottom: -1px;
+  }
+}

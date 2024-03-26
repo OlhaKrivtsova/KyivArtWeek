@@ -1,0 +1,74 @@
+.ticket {
+  max-width: 278px;
+  height: 380px;
+  display: flex;
+  padding: 40px 5px;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid var(--text-color-main);
+  // white-space: pre-line;
+
+  &__title {
+    height: 70px;
+    font-size: 25px;
+  }
+
+  &__information {
+    font-size: 14px;
+  }
+
+  &__price {
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  &__price-before {
+    font-size: 23px;
+    font-weight: 300;
+    color: var(--dark-text-on-gray-color);
+    text-decoration: line-through solid var(--dark-text-on-gray-color);
+  }
+
+  &__full {
+    .ticket__title-full {
+      font-weight: 700;
+    }
+    .ticket__date {
+      line-height: 1.7;
+    }
+
+    &--black {
+      background-color: var(--main-gray-color);
+      border: none;
+
+      .ticket__information {
+        color: var(--dark-text-on-gray-color);
+      }
+      .ticket__btn-buy-ticket {
+        background-color: var(--text-color-main);
+        color: var(--text-color-secondary);
+
+        &:hover {
+          font-weight: bolder;
+        }
+      }
+    }
+
+    &--white {
+      border: var(--main-gray-color) solid 1px;
+
+      .ticket__title-full {
+        font-weight: 700;
+        background-color: var(--yellow-color);
+      }
+
+      .ticket__price-full {
+        background-color: var(--yellow-color);
+      }
+    }
+  }
+}
