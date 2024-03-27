@@ -511,7 +511,7 @@ a:hover svg {
   font-size: 25px;
 }
 .ticket__information {
-  font-size: 14px;
+  font-size: 17px;
 }
 .ticket__price {
   font-size: 32px;
@@ -573,6 +573,16 @@ a:hover svg {
 @media screen and (max-width: 768px) {
   .item--first {
     margin-left: 24px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .item--last {
+    margin-right: 35px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .item--last {
+    margin-right: 24px;
   }
 }
 @media screen and (max-width: 1280px) {
@@ -1476,6 +1486,7 @@ a:hover svg {
 @media screen and (max-width: 480px) {
   .lecture-section__daily-schedule {
     font-size: 17px;
+    height: 250px;
   }
 }
 .lecture-section__event {
