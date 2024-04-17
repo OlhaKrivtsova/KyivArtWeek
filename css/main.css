@@ -163,7 +163,6 @@ body {
   font-weight: 400;
   background-color: var(--bg-color-main);
   color: var(--text-color-main);
-  overflow-anchor: auto;
 }
 
 a {

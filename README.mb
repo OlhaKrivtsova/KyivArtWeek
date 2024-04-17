@@ -1,0 +1,13 @@
+Kyiv Art Week: the landing page for performing the culture event. 
+
+This pet project was designed on my own for studying purposes. As a base, a beginner designer’s Figma project was taken. The web page has adaptive design for different-sized devices, two color themes with sophisticated implementation, and animation.   
+
+All the interactive elements were realized without using external libraries. 
+
+The local storage was used for keeping the user’s preferred color theme. 
+
+The web page consists of 12 sections including the header and the footer, and 3 pop-up windows through which the feature for buying tickets is realized. 
+
+As a server and database, Firebase was used to store the users’ ticket orders and result of payment status. 
+
+To implement the online payment, receiving the payment button from the server was simulated as well as getting the payment status from the payment service. 
